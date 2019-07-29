@@ -1,9 +1,14 @@
 (function () {
+  const component = document.querySelector<HTMLElement>('.vtex-product-context-provider .flex')
+
+  if (!component) {
+    return
+  }
+
   const frameUrl = prompt('Qual a url do iframe?', 'http://localhost:8080')
-  const component = document.querySelector('.vtex-product-context-provider .flex')
   const increment = 16
 
-  const easeInOutQuad = function (current, start, change, duration) {
+  const easeInOutQuad = function (current: number, start: number, change: number, duration: number) {
     current /= duration / 2
 
     if (current < 1) {
@@ -15,7 +20,7 @@
     return -change / 2 * (current * (current - 2) - 1) + start
   }
 
-  const scrollTo = function (element, to, duration, direction = 'scrollTop') {
+  const scrollTo = function (element: HTMLElement, to: number, duration: number, direction: 'scrollTop' | 'scrollLeft' = 'scrollTop') {
     let start = element[direction]
     let change = to - start
     let currentTime = 0
@@ -42,15 +47,20 @@
     }
 
     const html = window.document.documentElement
-    const header = document.querySelector('header.header')
+    const header = document.querySelector<HTMLElement>('header.header')
+    const frame = document.querySelector<HTMLElement>('iframe[name="glowy"]')
 
     const headerOffset = header.clientHeight
 
     switch (data.action) {
       case 'resize':
         (() => {
+          if (!frame) {
+            return
+          }
+
           const { height } = data.payload
-          document.querySelector('iframe[name="glowy"]').style.height = `${height}px`
+          frame.style.height = `${height}px`
         })()
         break
       case 'route_change':
