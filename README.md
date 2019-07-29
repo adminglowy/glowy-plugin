@@ -1,15 +1,13 @@
-# 🚀 Welcome to your new awesome project!
+# Whitelabel Frame
 
-This project has been created using **webpack scaffold**, you can now run
+Projeto para testar o iframe que vai rodar o whitelabel
 
 ```
 npm run build
 ```
 
-or
+ou
 
 ```
-yarn build
+npm start
 ```
-
-to bundle your application
