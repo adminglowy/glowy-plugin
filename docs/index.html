@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <title>Whitelabel Frame Bookmarklet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Catamaran&display=swap');
+
+    html, body {
+      font-family: Catamaran, sans-serif;
+    }
+
+    .container {
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    .container a {
+      color: #000;
+      font-size: 21px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .container a:hover {
+      text-decoration: underline;
+    }
+
+    .container p {
+      margin: 10px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="javascript:try{var script=document.createElement('script');script.src='https://github.com/glowy-dev/whitelabel-frame/releases/download/1.0/glowy-frame.min.js';document.body.appendChild(script)}catch(){}">Bookmarklet</a>
+    <p>(Arraste este link para a barra de favoritos do navegador)</p>
+  </div>
+</body>
+</html>
