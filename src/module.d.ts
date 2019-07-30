@@ -1,8 +1,9 @@
 declare interface ActionContext {
   html: HTMLElement,
   headerOffset: number,
-  component: HTMLElement,
-  frame: HTMLElement 
+  container: HTMLElement,
+  frame: HTMLElement,
+  start: HTMLElement
 }
 
 declare interface ActionFunction {

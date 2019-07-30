@@ -1,6 +1,6 @@
 import { easeInOutQuad } from './ease-in-out'
 
-const increment = Math.floor(1000/60) // +-60fps
+const increment = Math.floor(1000 / 60) // +-60fps
 
 export function scrollTo (element: HTMLElement, to: number, duration: number, direction: 'scrollTop' | 'scrollLeft' = 'scrollTop') {
   let start = element[direction]
