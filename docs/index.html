@@ -12,32 +12,44 @@
     }
 
     .container {
+      border: 2px solid #000;
+      border-radius: 5px;
       left: 50%;
+      overflow: hidden;
       position: absolute;
       text-align: center;
       top: 50%;
       transform: translate3d(-50%, -50%, 0);
     }
 
+    .container h1 {
+      background-color: #000;
+      color: #fff;
+      margin: 0 0 20px;
+    }
+
     .container a {
+      border-bottom: 1px dotted #000;
       color: #000;
       font-size: 21px;
       font-weight: bold;
       text-decoration: none;
+      padding: 0;
     }
 
     .container a:hover {
-      text-decoration: underline;
+      border-bottom-style: solid;
     }
 
     .container p {
-      margin: 10px 0 0;
+      margin: 10px 20px 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <a href="javascript:try{var script=document.createElement('script');script.src='https://github.com/glowy-dev/whitelabel-frame/releases/download/1.0/glowy-frame.min.js';document.body.appendChild(script)}catch(){}">Bookmarklet</a>
+    <h1>Bookmarklet</h1>
+    <a href="javascript:!function(){try{var e=document.createElement('script');e.src='https://github.com/glowy-dev/whitelabel-frame/releases/download/1.0/glowy-frame.min.js',document.body.appendChild(e)}catch(e){}}();">Glowy Frame</a>
     <p>(Arraste este link para a barra de favoritos do navegador)</p>
   </div>
 </body>
