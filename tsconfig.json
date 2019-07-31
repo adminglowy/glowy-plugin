@@ -1,12 +1,25 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
-    "allowJs": true
+    "allowJs": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
   },
   "include": [
-    "./src"
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
