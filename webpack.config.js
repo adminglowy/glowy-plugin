@@ -2,12 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	mode: 'development',
 	entry: {
-		'glowy-frame': './src/main.ts',
-		'glowy-frame.min': './src/main.ts'
+		'glowy': './src/main.ts',
+		'bookmarklet.min': './src/bookmarklet.ts'
 	},
 
 	output: {
@@ -17,6 +18,7 @@ module.exports = {
 
 	plugins: [
 		new webpack.ProgressPlugin(),
+		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: '!!ejs-webpack-loader!src/index.ejs'
 		})
