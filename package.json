@@ -20,6 +20,9 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@types/lodash.pick": "^4.4.6",
+    "@types/qs": "^6.5.3",
+    "@types/uuidv4": "^2.0.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-minify": "^0.5.0",
@@ -36,7 +39,11 @@
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash.pick": "^4.4.0",
+    "qs": "^6.7.0",
+    "uuidv4": "^4.0.0"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",

@@ -1,3 +1,10 @@
+declare var WHITELABEL_ENDPOINT: string
+
+declare interface GlowyFrame {
+  id: string
+  frame: HTMLIFrameElement
+}
+
 declare interface ActionContext {
   html: HTMLElement,
   headerOffset: number,
