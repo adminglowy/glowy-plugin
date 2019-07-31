@@ -26,6 +26,12 @@ export function registerFrames () {
       frame.src = `${ENDPOINT.origin}/?${qs.stringify(options)}`
       frame.name = `glowy-${id}`
       frame.dataset.id = id
+      frame.allow = 'geolocation'
+
+      Object.assign(frame.style, {
+        border: '0',
+        width: '100%'
+      })
 
       candidate.after(frame)
       candidate.parentElement!.removeChild(candidate)
