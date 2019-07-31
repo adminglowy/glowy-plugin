@@ -1,8 +1,9 @@
 import { scrollTo } from '../utils/scroll-to'
+import { FrameActionContext } from './types'
 
-export function onScrollToView (this: ActionContext, { top, bottom, duration }: { top: number, bottom: number, duration: number }) {
+export function onScrollToView (this: FrameActionContext, { top, bottom, duration }: { top: number, bottom: number, duration: number }) {
   const [elTop, elBottom] = [this.frame.offsetTop + top, this.frame.offsetTop + bottom]
-  const [viewTop, viewBottom] = [this.html.scrollTop + this.headerOffset, this.html.scrollTop + window.innerHeight]
+  const [viewTop, viewBottom] = [this.scrollContainer.scrollTop + this.scrollOffset, this.scrollContainer.scrollTop + window.innerHeight]
 
   let diff = 0
 
@@ -16,7 +17,7 @@ export function onScrollToView (this: ActionContext, { top, bottom, duration }: 
     return
   }
 
-  scrollTo(this.html, this.html.scrollTop + diff, duration)
+  scrollTo(this.scrollContainer, this.scrollContainer.scrollTop + diff, duration)
 }
 
 export default onScrollToView

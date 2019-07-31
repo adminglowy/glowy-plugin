@@ -1,4 +1,5 @@
-import actions from './actions/index'
+import doFrameAction from './actions/index'
+
 const w = window as any
 
 const installGlowyFrame = function () {
@@ -36,13 +37,11 @@ const installGlowyFrame = function () {
     const header = container.querySelector<HTMLElement>('header.header')
     const headerOffset = header.clientHeight
 
-    const context: ActionContext = { container, frame, headerOffset, html, start }
-
-    if (!actions.hasOwnProperty(data.action)) {
-      return
-    }
-
-    actions[data.action].call(context, data.payload)
+    doFrameAction({
+      frame,
+      scrollContainer: html,
+      scrollOffset: headerOffset
+    }, data.action, data.payload)
   })
 
   const frame = document.createElement('iframe')
