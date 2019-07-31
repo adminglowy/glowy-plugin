@@ -1,4 +1,4 @@
-import doFrameAction from './actions/index'
+import doFrameAction from './actions/frame-actions'
 
 const w = window as any
 

@@ -1,9 +1,9 @@
-import { FrameActionContext, FrameActionFunction } from './types'
+import { FrameActionContext, FrameActionFunction } from './frame/types'
 
-import resize from './resize'
-import routeChange from './route-change'
-import scrollTo from './scroll-to'
-import scrollToView from './scroll-to-view'
+import resize from './frame/resize'
+import routeChange from './frame/route-change'
+import scrollTo from './frame/scroll-to'
+import scrollToView from './frame/scroll-to-view'
 
 const actions: { [name: string]: FrameActionFunction } = {
   'resize': resize,

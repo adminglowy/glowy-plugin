@@ -1,4 +1,4 @@
-import { scrollTo } from '../utils/scroll-to'
+import { scrollTo } from '../../utils/scroll-to'
 import { FrameActionContext } from './types'
 
 export function onScrollToView (this: FrameActionContext, { top, bottom, duration }: { top: number, bottom: number, duration: number }) {

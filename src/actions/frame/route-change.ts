@@ -1,4 +1,4 @@
-import { scrollTo } from '../utils/scroll-to'
+import { scrollTo } from '../../utils/scroll-to'
 import { FrameActionContext } from './types'
 
 export function onRouteChange (this: FrameActionContext) {
