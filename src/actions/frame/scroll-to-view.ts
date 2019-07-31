@@ -1,7 +1,12 @@
-import { scrollTo } from '../../utils/scroll-to'
 import { FrameActionContext } from './types'
+import { scrollTo } from '../../utils/scroll-to'
 
-export function onScrollToView (this: FrameActionContext, { top, bottom, duration }: { top: number, bottom: number, duration: number }) {
+export function onScrollToView (this: FrameActionContext, payload?: { top?: number, bottom?: number, duration?: number }) {
+  if (!payload || !payload.top || !payload.bottom || !payload.duration) {
+    return
+  }
+
+  const { top, bottom, duration } = payload
   const [elTop, elBottom] = [this.frame.offsetTop + top, this.frame.offsetTop + bottom]
   const [viewTop, viewBottom] = [this.scrollContainer.scrollTop + this.scrollOffset, this.scrollContainer.scrollTop + window.innerHeight]
 
