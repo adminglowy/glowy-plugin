@@ -5,14 +5,11 @@ declare interface GlowyFrame {
   frame: HTMLIFrameElement
 }
 
-declare interface ActionContext {
-  html: HTMLElement,
-  headerOffset: number,
-  container: HTMLElement,
-  frame: HTMLElement,
-  start: HTMLElement
+declare interface GlowyModule {
+  version: string
+  frames: GlowyFrame[]
 }
 
-declare interface ActionFunction {
-  (this: ActionContext, payload?: object): void
+declare interface Window {
+  glowy?: GlowyModule
 }
