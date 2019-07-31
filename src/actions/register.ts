@@ -13,9 +13,13 @@ export function registerFrames () {
       return m
     })
     .reduce((acc, candidate) => {
-      const options = pick(candidate.dataset, ['media', 'provider', 'page', 'token'])
-
       const id = uuid()
+
+      const options = {
+        frameId: id,
+        ...pick(candidate.dataset, ['media', 'provider', 'page', 'token'])
+      }
+
       const frame = document.createElement('iframe')
 
       frame.classList.add('glowy-frame')
