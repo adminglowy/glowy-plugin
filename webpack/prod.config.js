@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
 
 module.exports = {
 	mode: 'production',
@@ -12,15 +13,20 @@ module.exports = {
 		rules: [
 			{
 				test: /.(ts|tsx)?$/,
+				include: [path.resolve(__dirname, '../src')],
+				exclude: [/node_modules/],
 				use: [
 					{
 						loader: 'babel-loader',
 						options: {
 							presets: [
-								'@babel/preset-env',
-								'minify'
+								'minify',
+								'@babel/preset-env'
 							]
 						}
+					},
+					{
+						loader: 'ts-loader'
 					}
 				]
 			}
