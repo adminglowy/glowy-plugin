@@ -1,76 +1,107 @@
-import doFrameAction from './actions/frame-actions'
+import qs from 'qs'
 
-const w = window as any
-
-const installGlowyFrame = function () {
-  if (w.glowy.installed) {
+function installGlowyScript () {
+  if (window.glowy) {
     return
   }
 
-  const html = window.document.documentElement
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/gh/glowy-dev/whitelabel-frame@latest/glowy.min.js'
+  script.async = true
+  script.defer = true
 
-  const container = document.querySelector<HTMLDivElement>('.vtex-product-context-provider .flex')!
-  const start = container.querySelector<HTMLDivElement>('.pricing-tables')
+  const last = Array.from(document.getElementsByTagName('script')).reverse()[0]
 
-  if (!container || !start) {
-    return
+  if (last) {
+    last.after(script)
+  } else {
+    document.head.appendChild(script)
   }
+}
 
-  const frameUrl = prompt('Qual a url do iframe?', 'http://localhost:8080')
+function addGlowyFrame () {
+  const query = prompt('Insira as options do frame:') || ''
+  const options = qs.parse(query)
 
-  if (!frameUrl) {
-    return
-  }
+  alert('Escolha um local para colocar o frame')
 
-  container
-    .querySelectorAll('.block-mb60')
-    .forEach(m => m.parentNode!.removeChild(m))
+  let target: HTMLElement
+  const bodyCursor = document.body.style.cursor
+  const dummy = document.createElement('u')
 
-  const padding = document.querySelector<HTMLDivElement>('body.countdown_on .header-padding-container')
+  Object.assign(dummy.style, {
+    backgroundColor: 'rgba(200,200,200,.7)',
+    display: 'block',
+    position: 'fixed',
+    transition: 'all .1s ease-in-out',
+    borderRadius: '2px',
+    height: '4px',
+    top: '-4px',
+    left: '0',
+    opacity: '0'
+  })
 
-  if (padding) {
-    padding.style.marginTop = '50px'
-  }
+  document.body.appendChild(dummy)
+  document.body.style.cursor = 'pointer'
 
-  window.addEventListener('message', ({ data }) => {
-    if (!data || data.sender !== 'Glowy') {
+  const moveDummy = (event: Event) => {
+    if (event.target) {
+      target = event.target as HTMLElement
+    }
+
+    if (!target || !target.getBoundingClientRect) {
       return
     }
 
-    const frame = document.querySelector<HTMLIFrameElement>('iframe[name="glowy"]')!
-    const header = container.querySelector<HTMLElement>('header.header')!
-    const headerOffset = header.clientHeight
+    const rect = target.getBoundingClientRect()
+    const top = `${Math.min(window.innerHeight - 2, Math.round(rect.top + rect.height + 2))}px`
+    const left = `${Math.round(rect.left)}px`
+    const width = `${Math.round(rect.width)}px`
 
-    doFrameAction({
-      frame,
-      scrollContainer: html,
-      scrollOffset: headerOffset
-    }, data.action, data.payload)
-  })
+    Object.assign(dummy.style, {
+      top,
+      left,
+      width,
+      opacity: '1'
+    })
+  }
 
-  const frame = document.createElement('iframe')
+  const keydown = (event: KeyboardEvent) => {
+    if (event.code === 'Escape') {
+      destroy()
+      return false
+    }
+  }
 
-  frame.classList.add('block-mb60')
-  frame.name = 'glowy'
-  frame.src = frameUrl
-  frame.allow = 'geolocation'
+  const destroy = () => {
+    window.removeEventListener('click', onClick)
+    window.removeEventListener('scroll', moveDummy)
+    window.removeEventListener('keydown', keydown)
+    window.removeEventListener('mouseover', moveDummy)
 
-  Object.assign(frame.style, {
-    border: '0',
-    flex: '1 1 auto',
-    width: '100%'
-  })
+    document.body.style.cursor = bodyCursor
+    document.body.removeChild(dummy)
+  }
 
-  start.after(frame)
+  const onClick = (event: MouseEvent) => {
+    const el = event.target as HTMLElement
+    const frame = document.createElement('div')
 
-  w.glowy.installed = true
+    frame.classList.add('glowy-frame')
+    Object.assign(frame.dataset, options)
+
+    el.after(frame)
+
+    destroy()
+
+    return false
+  }
+
+  window.addEventListener('click', onClick)
+  window.addEventListener('scroll', moveDummy, true)
+  window.addEventListener('keydown', keydown, true)
+  window.addEventListener('mouseover', moveDummy)
 }
 
-const glowy = w.glowy = w.glowy || {
-  install: installGlowyFrame,
-  installed: false
-}
-
-glowy.install()
-
-export default glowy
+installGlowyScript()
+addGlowyFrame()
