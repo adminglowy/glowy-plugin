@@ -1,15 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-	entry: {
-		'glowy': './src/main.ts'
-	},
+	entry: './src/main.ts',
 
 	output: {
-		filename: '[name].js',
+		library: 'glowy',
+		libraryExport: 'default',
+		libraryTarget: 'umd',
+		filename: 'glowy-plugin.min.js',
 		path: path.resolve(__dirname, '../dist')
 	},
 
@@ -18,7 +18,6 @@ module.exports = {
 			WHITELABEL_ENDPOINT: JSON.stringify(process.env.WHITELABEL_ENDPOINT)
 		}),
 		new webpack.ProgressPlugin(),
-		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			template: '!!ejs-webpack-loader!src/index.ejs'
 		})
@@ -30,11 +29,7 @@ module.exports = {
 				test: /.(ts|tsx)?$/,
 				include: [path.resolve(__dirname, '../src')],
 				exclude: [/node_modules/],
-				use: [
-					{
-						loader: 'ts-loader',
-					}
-				]
+				loader: 'ts-loader'
 			}
 		]
 	},

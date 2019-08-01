@@ -1,13 +1,7 @@
-# Whitelabel Frame
+# Glowy Plugin
 
-Projeto para testar o iframe que vai rodar o whitelabel
+Add Glowy to your website using our plugin
 
-```
-npm run build
-```
+## Getting Started
 
-ou
 
-```
-npm start
-```
