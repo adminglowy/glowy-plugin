@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/glowy-dev/glowy-plugin/tree/master.svg?style=svg)](https://circleci.com/gh/glowy-dev/glowy-plugin/tree/master)
+
 # Glowy Plugin
 
 Add Glowy to your website using our plugin
