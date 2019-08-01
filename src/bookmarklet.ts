@@ -6,7 +6,7 @@ function installGlowyScript () {
   }
 
   const script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/npm/glowy-plugin@latest/dist/glowy-plugin.min.js'
+  script.src = 'https://cdn.jsdelivr.net/npm/@glowy/plugin@latest/dist/glowy-plugin.min.js'
   script.async = true
   script.defer = true
 

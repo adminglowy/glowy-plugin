@@ -7,13 +7,13 @@ Add Glowy to your website using our plugin
 ### Script tag
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/glowy-plugin@latest/dist/glowy-plugin.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glowy/plugin@latest/dist/glowy-plugin.min.js"></script>
 ```
 
 ### NPM
 
 ```bash
-$ npm i -S glowy-plugin
+$ npm i -S @glowy/plugin
 ```
 
 ```javascript
