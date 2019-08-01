@@ -1,6 +1,6 @@
 {
   "name": "glowy-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add a glowy whitelabel frame to your project",
   "main": "dist/glowy-plugin.min.js",
   "scripts": {
