@@ -1,8 +1,8 @@
 {
-  "name": "whitelabel-frame",
+  "name": "glowy-frame",
   "version": "1.0.0",
-  "description": "My webpack project",
-  "main": "src/main.js",
+  "description": "Add a glowy whitelabel frame to your project",
+  "main": "dist/main.js",
   "scripts": {
     "build": "dotenv -- webpack",
     "start": "dotenv -- webpack-dev-server"
