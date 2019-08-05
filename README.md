@@ -8,8 +8,14 @@ Add Glowy to your website using our plugin
 
 ### Script tag
 
+#### Via jsDelivr
 ```html
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glowy/plugin@latest/dist/glowy-plugin.min.js"></script>
+```
+
+#### Via unpkg
+```html
+<script type="text/javascript" src="https://unpkg.com/@glowy/plugin/dist/glowy-plugin.min.js"></script>
 ```
 
 ### NPM
