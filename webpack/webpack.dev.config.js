@@ -5,6 +5,7 @@ module.exports = merge.smart(base, {
 	mode: 'development',
 	
 	devServer: {
-		open: true
+		open: true,
+    port: 8082
 	}
 })
