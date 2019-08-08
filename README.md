@@ -44,7 +44,7 @@ The possible attributes are:
 
 Attribute | Type | Required? | Default | Description
 --- | --- | --- | --- | ---
-data-provider | `uuid` | `true` |  | The Provider ID of which Glowy will retrieve merchant information
+data-provider | `string (uuid)` | `true` |  | The Provider ID of which Glowy will retrieve merchant information
 data-media  | `desktop` or  `mobile` | `false` | `desktop` | The media in which the frame is being inserted
 data-screen | `list` or `my-appointments` | `false` | `list` | The screen which the frame will start at
-data-token | `string` | `false` | | The authentication token to identify the user
+data-token | `string (uuid)` | `true` | | The authentication token to identify the user
