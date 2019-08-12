@@ -25,7 +25,7 @@ $ npm i -S @glowy/plugin
 ```
 
 ```javascript
-import glowy from 'glowy-plugin'
+import glowy from '@glowy/plugin'
 ```
 
 ## Getting started
