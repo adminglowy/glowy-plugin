@@ -4,7 +4,7 @@ import registerFrames from './actions/register'
 
 export default (function glowyInstall () {
   const glowy: GlowyModule = {
-    version: 'v1.0',
+    version: `v${VERSION}`,
     frames: []
   }
 
@@ -42,7 +42,7 @@ export default (function glowyInstall () {
     glowy.frames = [...glowy.frames, ...registerFrames()]
   })
 
-  observer.observe(document.body, { childList: true, subtree: true })
+  observer.observe(document.body || document.documentElement, { childList: true, subtree: true })
 
   return glowy
 })()

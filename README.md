@@ -10,12 +10,12 @@ Add Glowy to your website using our plugin
 
 #### Via jsDelivr
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glowy/plugin@latest/dist/glowy-plugin.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@glowy/plugin@latest/dist/glowy-plugin.min.js" async defer></script>
 ```
 
 #### Via unpkg
 ```html
-<script type="text/javascript" src="https://unpkg.com/@glowy/plugin/dist/glowy-plugin.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/@glowy/plugin/dist/glowy-plugin.min.js" async defer></script>
 ```
 
 ### NPM
@@ -25,7 +25,7 @@ $ npm i -S @glowy/plugin
 ```
 
 ```javascript
-import glowy from 'glowy-plugin'
+import glowy from '@glowy/plugin'
 ```
 
 ## Getting started

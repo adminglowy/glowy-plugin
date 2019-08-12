@@ -1,4 +1,5 @@
 declare var WHITELABEL_ENDPOINT: string
+declare var VERSION: string
 
 interface GlowyMessage {
   frame: string
