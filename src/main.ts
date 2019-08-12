@@ -4,7 +4,7 @@ import registerFrames from './actions/register'
 
 export default (function glowyInstall () {
   const glowy: GlowyModule = {
-    version: 'v1.0',
+    version: `v${VERSION}`,
     frames: []
   }
 

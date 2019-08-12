@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const pkg = require('../package.json')
 
 module.exports = {
 	entry: './src/main.ts',
@@ -15,7 +16,8 @@ module.exports = {
 
 	plugins: [
 		new webpack.DefinePlugin({
-			WHITELABEL_ENDPOINT: JSON.stringify(process.env.WHITELABEL_ENDPOINT)
+			WHITELABEL_ENDPOINT: JSON.stringify(process.env.WHITELABEL_ENDPOINT),
+			VERSION: JSON.stringify(pkg.version)
 		}),
 		new webpack.ProgressPlugin(),
 		new HtmlWebpackPlugin({
