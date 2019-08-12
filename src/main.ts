@@ -42,7 +42,7 @@ export default (function glowyInstall () {
     glowy.frames = [...glowy.frames, ...registerFrames()]
   })
 
-  observer.observe(document.body, { childList: true, subtree: true })
+  observer.observe(document.body || document.documentElement, { childList: true, subtree: true })
 
   return glowy
 })()
