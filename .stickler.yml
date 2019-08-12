@@ -1,8 +1,0 @@
-linters:
-  tslint:
-    project: ./tsconfig.json
-    config: ./tslint.json
-files:
-  ignore:
-    - 'bower_components/*'
-    - 'node_modules/*'
