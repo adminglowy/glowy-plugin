@@ -48,5 +48,5 @@ data-provider | `string (uuid)` | `true` |  | The Provider ID of which Glowy wil
 data-media  | `desktop` or  `mobile` | `false` | `desktop` | The media in which the frame is being inserted
 data-screen | `list` or `my-appointments` | `false` | `list` | The screen which the frame will start at
 data-token | `string (uuid)` | `true` | | The authentication token to identify the user
-data-back-label | `string` | `false` | `Início` | The back button label
-data-back-url | `string (url)` | `false` | | The back button URL
+data-back-button-label | `string` | `false` | `Início` | The back button label
+data-back-button-url | `string (url)` | `false` | | The back button URL
