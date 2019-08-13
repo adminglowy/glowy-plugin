@@ -17,7 +17,7 @@ export function registerFrames () {
 
       const options = {
         frameId: id,
-        ...pick(candidate.dataset, ['media', 'provider', 'page', 'token', 'screen'])
+        ...pick(candidate.dataset, ['media', 'provider', 'page', 'token', 'screen', 'backLabel', 'backUrl'])
       }
 
       const frame = document.createElement('iframe')
