@@ -22,7 +22,7 @@ module.exports = {
 		new webpack.ProgressPlugin(),
 		new HtmlWebpackPlugin({
 			template: '!!ejs-webpack-loader!src/index.ejs',
-			TOKEN: process.env.TOKEN || '9137b9ce-f484-4cf9-a44f-ac40d5a9e10f'
+			TOKEN: process.env.TOKEN || ''
 		})
 	],
 
