@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/glowy-dev/glowy-plugin/tree/master.svg?style=svg)](https://circleci.com/gh/glowy-dev/glowy-plugin/tree/master)
+[![CircleCI](https://circleci.com/gh/glowy-dev/glowy-plugin/tree/master.svg?style=svg)](https://circleci.com/gh/glowy-dev/glowy-plugin/tree/master) [![Bundlephobia](https://badgen.net/bundlephobia/minzip/@glowy/plugin)](https://bundlephobia.com/result?p=@glowy/plugin) [![JSDelivr](https://badgen.net/jsdelivr/v/npm/@glowy/plugin)](https://cdn.jsdelivr.net/npm/@glowy/plugin@latest/dist/glowy-plugin.min.js)
 
 # Glowy Plugin
 
