@@ -6,6 +6,6 @@ module.exports = merge.smart(base, {
 
   devServer: {
     open: true,
-    port: 8082
+    port: process.env.PORT || 8082
   }
 })

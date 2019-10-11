@@ -21,7 +21,8 @@ module.exports = {
 		}),
 		new webpack.ProgressPlugin(),
 		new HtmlWebpackPlugin({
-			template: '!!ejs-webpack-loader!src/index.ejs'
+			template: '!!ejs-webpack-loader!src/index.ejs',
+			TOKEN: process.env.TOKEN || ''
 		})
 	],
 
