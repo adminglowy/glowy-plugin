@@ -44,7 +44,7 @@ export function registerFrames () {
         width: '100%'
       })
 
-      candidate.after(frame)
+      candidate.after ? candidate.after(frame) : candidate.parentElement!.insertBefore(frame, candidate.nextSibling)
       candidate.parentElement!.removeChild(candidate)
 
       return [...acc, { id, frame }]
