@@ -28,11 +28,12 @@ export default (function glowyInstall () {
 
     const frame = glowyFrame.frame
     const scrollContainer = getScrollableParent(frame)
+    const { scrollOffset } = frame.dataset
 
     doFrameAction({
       frame,
       scrollContainer,
-      scrollOffset: 0
+      scrollOffset: Number(scrollOffset) || 0
     }, data.action, data.payload)
   })
 
