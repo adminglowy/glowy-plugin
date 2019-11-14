@@ -8,9 +8,19 @@
       body {
         margin: 0;
       }
+      .mock-area {
+        background: #000;
+        opacity: 0.7;
+        padding-top: 30%;
+      }
+      .mock-area:first-of-type {
+        padding-top: 50%;
+      }
     </style>
   </head>
   <body>
-    <div class="glowy-frame" data-token="<%= htmlWebpackPlugin.options.TOKEN %>"></div>
+    <div class="mock-area"></div>
+    <div class="glowy-frame" data-token="<%= htmlWebpackPlugin.options.TOKEN %>" data-scroll-offset="100"></div>
+    <div class="mock-area"></div>
   </body>
 </html>

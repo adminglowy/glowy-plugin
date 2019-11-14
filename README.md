@@ -50,3 +50,4 @@ data-screen | `list` or `my-appointments` | `false` | `list` | The screen which 
 data-token | `string (uuid)` | `true` | | The authentication token to identify the user
 data-back-button-label | `string` | `false` | `Início` | The back button label
 data-back-button-url | `string (url)` | `false` | | The back button URL
+data-scroll-offset | `number` | `false` | | Offset difference when scroll automatically
