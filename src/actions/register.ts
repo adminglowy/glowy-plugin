@@ -30,14 +30,16 @@ export function registerFrames () {
           ]
         )
       }
+      const { scrollOffset } = candidate.dataset
 
       const frame = document.createElement('iframe')
 
       frame.classList.add('glowy-frame')
       frame.src = `${ENDPOINT.origin}/?${qs.stringify(options)}`
       frame.name = `glowy-${id}`
-      frame.dataset.id = id
       frame.allow = 'geolocation'
+      frame.dataset.id = id
+      frame.dataset.scrollOffset = scrollOffset || '0'
 
       Object.assign(frame.style, {
         border: '0',
