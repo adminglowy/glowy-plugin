@@ -26,7 +26,8 @@ export function registerFrames () {
             'token',
             'screen',
             'backButtonLabel',
-            'backButtonUrl'
+            'backButtonUrl',
+            'scrollOffset'
           ]
         )
       }
