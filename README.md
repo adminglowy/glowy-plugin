@@ -51,3 +51,4 @@ data-token | `string (uuid)` | `true` | | The authentication token to identify t
 data-back-button-label | `string` | `false` | `Início` | The back button label
 data-back-button-url | `string (url)` | `false` | | The back button URL
 data-scroll-offset | `number` | `false` | | Offset difference when scroll automatically
+data-look | `string` | `false` | | Slug name from which Glowy pre-select option
